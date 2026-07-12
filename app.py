@@ -3,6 +3,8 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from dotenv import load_dotenv
 
+from handlers.start import router
+
 import os
 import asyncio
 
@@ -16,6 +18,8 @@ bot = Bot(
 )
 
 dp = Dispatcher()
+
+dp.include_router(router)
 
 async def main():
     print("✅ Bot started")
